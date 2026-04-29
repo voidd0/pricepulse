@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>pricepulse</title>
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+  <main class="page">
+    <header class="page-hd">
+      <img src="../icons/icon-48.png" alt="" width="40" height="40">
+      <h1>pricepulse</h1>
+      <span id="plan-badge" class="badge badge-free">FREE</span>
+    </header>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="watchlist" role="tab">watchlist</button>
+      <button class="tab" data-tab="diff" role="tab">diff viewer</button>
+      <button class="tab" data-tab="history" role="tab">history</button>
+    </div>
+
+    <section class="tab-pane active" id="pane-watchlist">
+      <div class="card">
+        <h2>your watched pages</h2>
+        <p class="lead">click "history" on any row to see snapshots over time, or "diff" to compare two snapshots side-by-side.</p>
+        <table class="watchlist-table">
+          <thead><tr><th>page</th><th>last checked</th><th>recent change</th><th></th></tr></thead>
+          <tbody id="app-watchlist-body">
+            <tr><td colspan="4" class="empty">loading...</td></tr>
+          </tbody>
+        </table>
+        <p class="hint" style="margin-top:14px">to add a page, click the pricepulse toolbar icon while on a competitor pricing page, or use the <a href="options.html">settings page</a>.</p>
+      </div>
+    </section>
+
+    <section class="tab-pane" id="pane-diff">
+      <div class="card">
+        <h2>snapshot diff viewer</h2>
+        <div class="diff-controls">
+          <select id="diff-watchlist"><option value="">select page...</option></select>
+          <select id="diff-snap-a"><option value="">earlier snapshot</option></select>
+          <select id="diff-snap-b"><option value="">later snapshot</option></select>
+          <button id="diff-load" class="btn primary">load diff</button>
+        </div>
+        <div id="diff-empty" class="hint" style="margin:20px 0">pick a watchlist page and two snapshots to compare.</div>
+        <div class="diff-grid" id="diff-grid" style="display:none">
+          <div class="diff-pane"><h3 id="diff-a-when">earlier</h3><div id="diff-a"></div></div>
+          <div class="diff-pane"><h3 id="diff-b-when">later</h3><div id="diff-b"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-pane" id="pane-history">
+      <div class="card">
+        <h2>snapshot history</h2>
+        <div class="diff-controls">
+          <select id="hist-watchlist"><option value="">select page...</option></select>
+        </div>
+        <div id="hist-empty" class="hint" style="margin:20px 0">pick a page to see the timeline of recorded changes.</div>
+        <div id="hist-content" style="display:none">
+          <div class="history-graph" id="hist-graph"></div>
+          <ul id="hist-events" class="history-events"></ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-ft">
+      <a href="https://extensions.voiddo.com/pricepulse/">pricepulse home</a>
+      <a href="https://extensions.voiddo.com/pricepulse/privacy/">privacy</a>
+      <a href="https://extensions.voiddo.com/pricepulse/terms/">terms</a>
+      <a href="mailto:support@voiddo.com">support@voiddo.com</a>
+    </footer>
+  </main>
+  <script src="../shared/constants.js"></script>
+  <script src="../shared/browser.js"></script>
+  <script src="../shared/install_id.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

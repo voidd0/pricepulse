@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>pricepulse</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="hd">
+    <img src="../icons/icon-48.png" alt="" width="36" height="36">
+    <div class="hd-text">
+      <div class="hd-name">pricepulse</div>
+      <div class="hd-sub">competitor pricing watchlist</div>
+    </div>
+    <span id="plan-badge" class="badge badge-free">FREE</span>
+  </header>
+
+  <section class="meter">
+    <div class="meter-row">
+      <span class="meter-label">watchlist</span>
+      <span class="meter-val" id="meter-val">— / —</span>
+    </div>
+    <div class="meter-bar"><div id="meter-fill" class="meter-fill"></div></div>
+    <div class="meter-foot">
+      <span id="check-cadence">checks weekly</span>
+    </div>
+  </section>
+
+  <section class="action">
+    <button id="add-current" class="btn primary" disabled>
+      <span id="add-current-label">+ add this page to watchlist</span>
+    </button>
+    <p id="add-current-hint" class="hint">open a competitor pricing page first</p>
+  </section>
+
+  <section class="recent">
+    <div class="recent-head">
+      <span>recent alerts</span>
+      <button id="refresh" class="btn-link">refresh</button>
+    </div>
+    <ul id="recent-list" class="recent-list">
+      <li class="recent-empty">nothing changed yet — alerts show up here when a watched page changes.</li>
+    </ul>
+  </section>
+
+  <footer class="ft">
+    <button id="open-app" class="btn ghost">open watchlist</button>
+    <button id="open-options" class="btn ghost">settings</button>
+    <button id="open-upgrade" class="btn upgrade">upgrade</button>
+  </footer>
+
+  <script src="../shared/constants.js"></script>
+  <script src="../shared/browser.js"></script>
+  <script src="../shared/install_id.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

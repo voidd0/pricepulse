@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "pricepulse — competitor pricing watchlist",
+  "version": "1.0.0",
+  "description": "Track competitor pricing pages on your watchlist. Email alerts when prices or tiers change. Privacy by default.",
+  "homepage_url": "https://extensions.voiddo.com/pricepulse/",
+  "author": "vøiddo",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "pricepulse@voiddo.com",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["websiteContent"],
+        "optional": ["technicalAndInteraction"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "140.0"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "pricepulse",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "background": {
+    "scripts": ["background/service-worker.js"]
+  },
+  "permissions": ["storage", "activeTab"],
+  "options_ui": {
+    "page": "pages/options.html",
+    "open_in_tab": true
+  }
+}

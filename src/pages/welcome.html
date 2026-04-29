@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>welcome to pricepulse</title>
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+  <main class="page">
+    <div class="welcome-hero">
+      <img src="../icons/icon-128.png" alt="">
+      <div>
+        <h1>welcome to pricepulse.</h1>
+        <p>you opened this tab because you just installed pricepulse. here is what it does, what it doesn't do, and what we collect.</p>
+      </div>
+    </div>
+
+    <section class="card">
+      <h2>what it does</h2>
+      <ul class="bullets">
+        <li>you add competitor pricing pages (or any page you want monitored) to your watchlist by clicking the toolbar icon while you are on the page.</li>
+        <li>our backend re-fetches each watchlist URL on your tier schedule (weekly free, daily Pro, hourly Pro+).</li>
+        <li>when text on the page changes vs the previous snapshot, we email you a one-line summary + a link to the side-by-side diff.</li>
+        <li>you can compare any two snapshots in the diff viewer and export your data as CSV (Pro / Pro+).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>what it does NOT do</h2>
+      <ul class="bullets">
+        <li>we do not scrape pages from your computer — all fetching happens server-side. your browser is never the user-agent.</li>
+        <li>we do not auto-buy, auto-cancel, or change anything on the pages we monitor. read-only by design.</li>
+        <li>we do not track your browsing — we only see URLs you explicitly add to your watchlist.</li>
+        <li>we do not give buy/avoid recommendations. just diffs.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>what we collect</h2>
+      <ul class="bullets">
+        <li><strong>your watchlist URLs</strong> — required, to know what to monitor.</li>
+        <li><strong>your alert email</strong> — optional, only if you want email alerts.</li>
+        <li><strong>an anonymous install id</strong> — a 24-character random string, used only as a per-install rate-limit key on the Free tier. never linked to your identity.</li>
+        <li><strong>nothing else.</strong> no analytics, no fingerprinting, no third-party trackers in the extension.</li>
+      </ul>
+      <p class="hint">full privacy policy: <a href="https://extensions.voiddo.com/pricepulse/privacy/">extensions.voiddo.com/pricepulse/privacy/</a></p>
+    </section>
+
+    <section class="card">
+      <h2>tiers</h2>
+      <div class="tier-grid">
+        <div class="tier">
+          <div class="tier-name">Free</div>
+          <div class="tier-price">$0 <small>/forever</small></div>
+          <ul>
+            <li>5 watchlist entries</li>
+            <li>weekly checks</li>
+            <li>30-day history</li>
+            <li>email alerts</li>
+          </ul>
+        </div>
+        <div class="tier featured">
+          <div class="tier-name">Pro</div>
+          <div class="tier-price">$4.99 <small>/month</small></div>
+          <ul>
+            <li>50 watchlist entries</li>
+            <li>daily checks</li>
+            <li>unlimited history</li>
+            <li>CSV export</li>
+            <li>AI tier extraction</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <div class="tier-name">Pro+</div>
+          <div class="tier-price">$12.99 <small>/month</small></div>
+          <ul>
+            <li>500 watchlist entries</li>
+            <li>hourly checks</li>
+            <li>Slack / Discord webhooks</li>
+            <li>JSON read-API</li>
+            <li>everything in Pro</li>
+          </ul>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="options.html">open settings &rarr;</a>
+        <a class="btn ghost" href="https://extensions.voiddo.com/pricepulse/upgrade/">see upgrade page</a>
+      </div>
+    </section>
+
+    <footer class="page-ft">
+      <a href="https://extensions.voiddo.com/pricepulse/">pricepulse home</a>
+      <a href="https://extensions.voiddo.com/pricepulse/privacy/">privacy</a>
+      <a href="https://extensions.voiddo.com/pricepulse/terms/">terms</a>
+      <a href="mailto:support@voiddo.com">support@voiddo.com</a>
+    </footer>
+  </main>
+  <script src="../shared/constants.js"></script>
+  <script src="../shared/browser.js"></script>
+  <script src="../shared/install_id.js"></script>
+  <script src="welcome.js"></script>
+</body>
+</html>

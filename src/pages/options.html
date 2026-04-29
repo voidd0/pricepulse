@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>pricepulse — settings</title>
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+  <main class="page">
+    <header class="page-hd">
+      <img src="../icons/icon-48.png" alt="" width="40" height="40">
+      <h1>pricepulse settings</h1>
+      <span id="plan-badge" class="badge badge-free">FREE</span>
+    </header>
+
+    <section class="card">
+      <h2>your watchlist</h2>
+      <p class="lead">competitor pricing pages we re-check on your tier schedule. when text changes, you get an email.</p>
+      <div id="watchlist-table-wrap">
+        <table class="watchlist-table" id="watchlist-table">
+          <thead><tr><th>url / nickname</th><th>last checked</th><th>last change</th><th></th></tr></thead>
+          <tbody id="watchlist-body">
+            <tr><td colspan="4" class="empty">loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <form id="add-form" class="add-row">
+        <input id="add-url" type="url" placeholder="https://competitor.com/pricing" required>
+        <input id="add-nick" type="text" placeholder="nickname (optional)" maxlength="80">
+        <button type="submit" class="btn primary">+ add</button>
+      </form>
+      <div id="add-status" class="form-status"></div>
+    </section>
+
+    <section class="card">
+      <h2>alert settings</h2>
+      <div class="field-group">
+        <label for="alert-email">email for alerts</label>
+        <input id="alert-email" type="email" placeholder="you@example.com">
+        <p class="hint">used only when a watched page changes. unsubscribe link in every email.</p>
+      </div>
+      <div class="field-group">
+        <label for="alert-webhook">slack / discord webhook (Pro+ only)</label>
+        <input id="alert-webhook" type="url" placeholder="https://hooks.slack.com/services/...">
+        <p class="hint">paste a Slack incoming-webhook or Discord webhook URL. each alert posts a one-line summary + link.</p>
+      </div>
+      <button id="save-alerts" class="btn primary">save alert settings</button>
+      <div id="alert-status" class="form-status"></div>
+    </section>
+
+    <section class="card">
+      <h2>license</h2>
+      <p class="lead">paste your Pro / Pro+ license key from the email after checkout. unlocks daily/hourly checks + multi-profile + CSV export.</p>
+      <div class="field-group">
+        <label for="lic-key">license key</label>
+        <input id="lic-key" type="text" placeholder="PP-XXXX-XXXX-XXXX-XXXX" autocomplete="off">
+      </div>
+      <div class="actions">
+        <button id="save-license" class="btn primary">activate</button>
+        <button id="forget-license" class="btn ghost">forget</button>
+      </div>
+      <div id="license-status" class="form-status"></div>
+    </section>
+
+    <section class="card">
+      <h2>data export</h2>
+      <p class="lead">export your watchlist + last 100 snapshots as CSV (Pro and Pro+).</p>
+      <button id="export-csv" class="btn ghost">download CSV</button>
+      <span id="export-status" class="form-status"></span>
+    </section>
+
+    <footer class="page-ft">
+      <a href="https://extensions.voiddo.com/pricepulse/">pricepulse home</a>
+      <a href="https://extensions.voiddo.com/pricepulse/privacy/">privacy</a>
+      <a href="https://extensions.voiddo.com/pricepulse/terms/">terms</a>
+      <a href="mailto:support@voiddo.com">support@voiddo.com</a>
+    </footer>
+  </main>
+  <script src="../shared/constants.js"></script>
+  <script src="../shared/browser.js"></script>
+  <script src="../shared/install_id.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
